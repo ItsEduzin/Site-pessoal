@@ -1,0 +1,194 @@
+/* ==========================================
+   1. VARIÁVEIS DE CORES E CONFIGURAÇÕES
+   ========================================== */
+:root {
+  --bg-primary: #0f172a;       /* Fundo principal escuro */
+  --bg-secondary: #1e293b;     /* Fundo de cards e seções */
+  --text-main: #f8fafc;        /* Texto principal */
+  --text-muted: #94a3b8;       /* Texto secundário/suave */
+  --accent-color: #38bdf8;     /* Cor de destaque (Azul/Ciano) */
+  --accent-hover: #0289c7;     /* Cor de destaque ao passar o mouse */
+  --border-color: #334155;     /* Cor das bordas */
+  --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ==========================================
+   2. RESET BÁSICO E ESTILOS GERAIS
+   ========================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-border-box;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  font-family: var(--font-family);
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--accent-hover);
+}
+
+/* ==========================================
+   3. CABEÇALHO E NAVEGAÇÃO
+   ========================================== */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 10%;
+  background-color: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--accent-color);
+  letter-spacing: 1px;
+}
+
+header nav a {
+  margin-left: 2rem;
+  color: var(--text-main);
+  font-size: 1rem;
+}
+
+header nav a:hover {
+  color: var(--accent-color);
+}
+
+/* ==========================================
+   4. SEÇÃO HERO / SOBRE
+   ========================================== */
+.hero {
+  padding: 6rem 10%;
+  text-align: center;
+  background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+  color: var(--text-main);
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ==========================================
+   5. SEÇÃO DE PROJETOS (GRID)
+   ========================================== */
+#projetos, #contato {
+  padding: 4rem 10%;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  position: relative;
+}
+
+h2::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 3px;
+  background-color: var(--accent-color);
+  margin: 0.5rem auto 0;
+  border-radius: 2px;
+}
+
+.projetos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.card-projeto {
+  background-color: var(--bg-secondary);
+  padding: 1.8rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.card-projeto:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent-color);
+}
+
+.card-projeto h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.8rem;
+}
+
+.card-projeto p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 1.2rem;
+}
+
+/* ==========================================
+   6. FORMULÁRIO DE CONTATO
+   ========================================== */
+#form-contato {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+#form-contato input,
+#form-contato textarea {
+  width: 100%;
+  padding: 0.9rem;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  color: var(--text-main);
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+#form-contato input:focus,
+#form-contato textarea:focus {
+  border-color: var(--accent-color);
+}
+
+#form-contato button {
+  padding: 1rem;
+  background-color: var(--accent-color);
+  color: #000;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#form-contato button:hover {
+  background-color: var(--accent-hover);
+  color: #fff;
+}
